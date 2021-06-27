@@ -22,12 +22,12 @@ app.use( express.json() );
 app.use( express.urlencoded( { extended: true } ) );
 app.use( cookieParser() );
 
-// -- SET YOUR ML MODEL HERE --
+// -- TODO: SET YOUR ML MODEL HERE --
 const { AI } = require( "./ml/DB_Contrast" );
 const net = new AI();
 net.initialize(); // Note: This is an asynchronous function and can take some time to load
 
-// -- EDIT ROUTES AND ACCESS HERE --
+// -- TODO: EDIT ROUTES AND ACCESS HERE --
 app.get( "/", async ( req, res ) => {
     res.json( net );
 });
